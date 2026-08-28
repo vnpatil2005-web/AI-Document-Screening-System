@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Document Screening System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            🛡️
+        </div>
+
+        <div>
+            <h1>AI Document Screening System</h1>
+            <p>AI-Based Fake Identity & Document Verification</p>
+        </div>
+
+    </header>
+
+
+    <!-- MAIN CONTAINER -->
+    <main class="container">
+
+        <!-- UPLOAD CARD -->
+        <section class="upload-card">
+
+            <h2>Upload Identity Document</h2>
+
+            <p class="subtitle">
+                Upload a passport, visa, ID card or other supported document.
+            </p>
+
+
+            <!-- FILE AREA -->
+            <div class="upload-area" id="uploadArea">
+
+                <div class="upload-icon">
+                    📄
+                </div>
+
+                <h3>Select Document</h3>
+
+                <p>JPG, JPEG or PNG</p>
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    accept=".jpg,.jpeg,.png,image/jpeg,image/png"
+                    hidden
+                >
+
+                <button
+                    type="button"
+                    class="choose-btn"
+                    id="chooseBtn"
+                >
+                    Choose File
+                </button>
+
+                <p id="fileName" class="file-name">
+                    No file selected
+                </p>
+
+            </div>
+
+
+            <!-- IMAGE PREVIEW -->
+            <div
+                class="preview-container"
+                id="previewContainer"
+                style="display: none;"
+            >
+
+                <h3>Document Preview</h3>
+
+                <img
+                    id="previewImage"
+                    src=""
+                    alt="Document Preview"
+                >
+
+            </div>
+
+
+            <!-- SCREEN BUTTON -->
+            <button
+                type="button"
+                class="screen-btn"
+                id="screenBtn"
+            >
+                🔍 Screen Document
+            </button>
+
+
+            <!-- LOADING -->
+            <div
+                class="loading"
+                id="loading"
+                style="display: none;"
+            >
+
+                <div class="spinner"></div>
+
+                <p>
+                    AI is analyzing your document...
+                </p>
+
+            </div>
+
+
+            <!-- ERROR -->
+            <div
+                class="error-box"
+                id="errorBox"
+                style="display: none;"
+            >
+                <strong>Error:</strong>
+                <span id="errorMessage"></span>
+            </div>
+
+        </section>
+
+
+        <!-- RESULTS -->
+        <section
+            class="result-card"
+            id="resultCard"
+            style="display: none;"
+        >
+
+            <div class="result-header">
+
+                <h2>Screening Result</h2>
+
+                <div
+                    id="statusBadge"
+                    class="status-badge"
+                >
+                    -
+                </div>
+
+            </div>
+
+
+            <!-- VERIFICATION -->
+            <div class="verification-box">
+
+                <h3>Verification</h3>
+
+                <div class="verification-status">
+
+                    <span id="verificationIcon">
+                        -
+                    </span>
+
+                    <div>
+
+                        <strong id="verificationStatus">
+                            -
+                        </strong>
+
+                        <p id="verificationMessage">
+                            -
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DOCUMENT INFORMATION -->
+            <div class="information">
+
+                <h3>Extracted Information</h3>
+
+                <div class="info-grid">
+
+                    <div class="info-box">
+                        <span>Document Number</span>
+                        <strong id="documentNumber">-</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <span>Name</span>
+                        <strong id="name">-</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <span>Gender</span>
+                        <strong id="gender">-</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <span>Date of Birth</span>
+                        <strong id="dob">-</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <span>Nationality</span>
+                        <strong id="nationality">-</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <span>Date of Issue</span>
+                        <strong id="issueDate">-</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <span>Date of Expiry</span>
+                        <strong id="expiryDate">-</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <span>Risk Level</span>
+                        <strong id="riskLevel">-</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- OCR TEXT -->
+            <div class="ocr-box">
+
+                <h3>Detected Text</h3>
+
+                <pre id="ocrText">
+No OCR text available.
+                </pre>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            AI Document Screening System
+        </p>
+
+        <span>
+            SIH Project
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>
